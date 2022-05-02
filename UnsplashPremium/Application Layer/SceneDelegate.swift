@@ -19,9 +19,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         
-        let homeVC = PageViewController(viewModel: HomeViewModel(photosService: PhotosServiceImplementation()))
-        let searchVC = SearchViewController(nibName: nil, bundle: nil)
-        let postVC = SearchResultViewController(nibName: nil, bundle: nil)
+        let homeVC = HomePageViewController(viewModel: HomeViewModel(photosService: PhotosServiceImplementation()))
+        let searchVC = SearchResultViewController(nibName: nil, bundle: nil)
+        let postVC = PostViewController(nibName: nil, bundle: nil)
         let profileVC = ProfileViewController(nibName: nil, bundle: nil)
                 
         homeVC.tabBarItem.image = UIImage(systemName: "photo.fill")
@@ -34,9 +34,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let postNavC = UINavigationController(rootViewController: postVC)
         let profileNavC = UINavigationController(rootViewController: profileVC)
         
-        
         let tabBarC = UITabBarController()
-        tabBarC.viewControllers = [homeNavC, searchNavC, postNavC, profileNavC]
+        tabBarC.viewControllers = [homeNavC,searchNavC,postNavC,profileNavC]
         tabBarC.selectedIndex = 0
         tabBarC.tabBar.backgroundColor = .black
         tabBarC.tabBar.unselectedItemTintColor = .gray
