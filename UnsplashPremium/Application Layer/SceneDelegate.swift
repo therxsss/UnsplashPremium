@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let homeVC = HomePageViewController(viewModel: HomeViewModel(photosService: PhotosServiceImplementation()))
         let searchVC = SearchResultViewController(nibName: nil, bundle: nil)
-        let postVC = PostViewController(nibName: nil, bundle: nil)
+        let postVC = SearchViewController(nibName: nil, bundle: nil)
         let profileVC = ProfileViewController(nibName: nil, bundle: nil)
                 
         homeVC.tabBarItem.image = UIImage(systemName: "photo.fill")
